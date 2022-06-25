@@ -10,7 +10,8 @@ class LogoButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      style: ButtonStyle(overlayColor: MaterialStateColor.resolveWith((states) => Colors.transparent),),
+      style: ButtonStyle(
+        overlayColor: MaterialStateColor.resolveWith((states) => Colors.transparent),),
       child: Text('MakeNgo',style: Theme.of(context).textTheme.headline1),
     );
   }

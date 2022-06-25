@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:site/core/utils/helper_widgets.dart';
 import 'package:site/core/values/colors.dart';
+import 'package:site/presentation/widgets/CustomContainer.dart';
 import 'package:site/presentation/widgets/app_bar_icon.dart';
 import 'package:site/presentation/widgets/flexible_space_component.dart';
 import 'package:site/presentation/widgets/logoButton.dart';
@@ -53,7 +56,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: CustomScrollView(
         controller: _scrollController,
-        physics: BouncingScrollPhysics(),
+
+        scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch, PointerDeviceKind.stylus, PointerDeviceKind.unknown},),
+
         slivers: [
           SliverAppBar(
             pinned: true,
@@ -61,22 +66,13 @@ class _HomePageState extends State<HomePage> {
 
             title: LogoButton(onPressed: () => _scrollToTop()),
 
-            actions: [
-              AppBarIcon(onPressed: (){}, image: 'assets/images/telegram.png'),
-              addHorizontalSpace(MediaQuery.of(context).size.width * 0.01),
-              IconButton(onPressed: (){}, icon: const Icon(Icons.phone,color: appWhite,size: 30)),
-              addHorizontalSpace(MediaQuery.of(context).size.width * 0.01),
-            ],
+            actions: [],
 
-            flexibleSpace: FlexibleSpaceBar(
+            flexibleSpace: const FlexibleSpaceBar(
                   background: FlexibleComponent()),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.4,
-              color: Colors.redAccent,
-              child: FittedBox(child: Text('Lorem')),
-            ),
+            child: CustomContainer(),
           ),
           SliverToBoxAdapter(
             child: Container(

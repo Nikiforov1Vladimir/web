@@ -9,9 +9,10 @@ class AppBarIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-
-      child: Image(image: AssetImage(image)),
+    return IconButton(
+      onPressed: onPressed(),
+      iconSize: 30,
+      icon: Image(image: AssetImage(image),color: Colors.white),
     );
   }
 }

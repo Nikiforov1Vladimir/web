@@ -13,7 +13,7 @@ class FlexibleComponent extends StatelessWidget {
       child: Center(
         child: SizedBox(
           width: MediaQuery.of(context).size.width * 0.6,
-          height: MediaQuery.of(context).size.height * 0.2,  
+          height: MediaQuery.of(context).size.height * 0.3,
             child: FittedBox(child: Text('Сделаем для вас сайт или мобильное приложение',style: Theme.of(context).textTheme.headline1))),
       ),
 

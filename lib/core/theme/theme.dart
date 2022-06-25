@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:site/core/values/colors.dart';
 
 class Themes{
   static final lightTheme = ThemeData(
 
     appBarTheme: const AppBarTheme(
-      elevation: 2,
-      backgroundColor: Colors.white,
+      elevation: 10,
+      backgroundColor: appViolet,
     ),
 
     iconTheme: const IconThemeData(
