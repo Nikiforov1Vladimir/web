@@ -12,7 +12,7 @@ class LogoButton extends StatelessWidget {
       onPressed: onPressed,
       style: ButtonStyle(
         overlayColor: MaterialStateColor.resolveWith((states) => Colors.transparent),),
-      child: Text('MakeNgo',style: Theme.of(context).textTheme.headline1),
+      child: Text('MakeNgo',style: Theme.of(context).textTheme.headline3),
     );
   }
 }
