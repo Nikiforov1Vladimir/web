@@ -14,7 +14,7 @@ class Themes{
     textTheme: const TextTheme(
       headline1: TextStyle(
         color: appWhite,
-        fontSize: 50,
+        fontSize: 40,
       ),
       headline2: TextStyle(
           color: Colors.black,

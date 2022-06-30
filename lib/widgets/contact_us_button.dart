@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:site/core/values/colors.dart';
 
-class AppMaterialButton extends StatelessWidget {
+class ContactUsButton extends StatelessWidget {
 
-  final String text;
-
-  const AppMaterialButton({Key? key, required this.text}) : super(key: key);
+  const ContactUsButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +14,7 @@ class AppMaterialButton extends StatelessWidget {
       minWidth: MediaQuery.of(context).size.height * 0.13,
       splashColor: appViolet,
       onPressed: (){},
-      child: Text(text,style: Theme.of(context).textTheme.button),
+      child: Text('Написать нам',style: Theme.of(context).textTheme.button),
     );
   }
 }

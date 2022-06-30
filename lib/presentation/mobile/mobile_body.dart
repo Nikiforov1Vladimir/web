@@ -1,11 +1,17 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:site/core/values/images.dart';
+import 'package:site/presentation/mobile/widgets/mobile_flexible.dart';
+import 'package:site/presentation/mobile/widgets/mobile_footer.dart';
+import 'package:site/presentation/mobile/widgets/mobile_portfolio.dart';
+import 'package:site/widgets/custom_app_bar.dart';
 
-import 'desktop/widgets/desktop_container.dart';
-import 'mobile/widgets/mobile_container.dart';
-import '../widgets/flexible_space_component.dart';
-import '../widgets/logo_button.dart';
+import '../../core/values/texts.dart';
+import '../desktop/widgets/desktop_container.dart';
+import 'widgets/mobile_container.dart';
+import '../../widgets/flexible_space_component.dart';
+import '../../widgets/logo_button.dart';
 
 class MobileBody extends StatefulWidget {
   const MobileBody({Key? key}) : super(key: key);
@@ -49,49 +55,41 @@ class _MobileBodyState extends State<MobileBody> {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       controller: _scrollController,
 
       scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch, PointerDeviceKind.stylus, PointerDeviceKind.unknown},),
 
       slivers: [
-        SliverAppBar(
-          pinned: true,
-          expandedHeight: MediaQuery.of(context).size.height * 0.45,
-
-          title: LogoButton(onPressed: () => _scrollToTop()),
-
-          actions: [
-
-          ],
-
+        CustomAppBar(
+          horizontalSpacing: 0.05,
+          expandedHeight: 0.55,
+          function: _scrollToTop,
           flexibleSpace: const FlexibleSpaceBar(
-              background: FlexibleComponent()),
+              background: FlexibleComponent(
+                child: MobileFlexible(),
+              )),
         ),
-        SliverToBoxAdapter(
-          child: MobileContainer(),
-        ),
-        SliverToBoxAdapter(
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.4,
-            color: Colors.redAccent,
-            child: FittedBox(child: Text('Lorem')),
+        const SliverToBoxAdapter(
+          child: MobileContainer(
+              header: firstHeader,
+              text: firstText,
+              lottie: firstLottie
           ),
         ),
-        SliverToBoxAdapter(
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.4,
-            color: Colors.redAccent,
-            child: FittedBox(child: Text('Lorem')),
+        const SliverToBoxAdapter(
+          child: MobileContainer(
+              header: secondHeader,
+              text: secondText,
+              lottie: secondLottie
           ),
         ),
-        SliverToBoxAdapter(
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.4,
-            color: Colors.redAccent,
-            child: FittedBox(child: Text('Lorem')),
-          ),
+        const SliverToBoxAdapter(
+            child: MobilePortfolio()
+        ),
+        const SliverToBoxAdapter(
+          child: MobileFooter()
         )
-
 
       ],
     );

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class LogoButton extends StatelessWidget {
@@ -12,7 +13,7 @@ class LogoButton extends StatelessWidget {
       onPressed: onPressed,
       style: ButtonStyle(
         overlayColor: MaterialStateColor.resolveWith((states) => Colors.transparent),),
-      child: Text('MakeNgo',style: Theme.of(context).textTheme.headline3),
+      child: AutoSizeText('MakeNgo',style: Theme.of(context).textTheme.headline3,maxLines: 1),
     );
   }
 }

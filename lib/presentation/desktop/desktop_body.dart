@@ -1,9 +1,12 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:site/core/utils/helper_widgets.dart';
+import 'package:site/core/values/images.dart';
 import 'package:site/core/values/texts.dart';
+import 'package:site/presentation/desktop/widgets/desktop_flexible.dart';
 import 'package:site/presentation/desktop/widgets/desktop_footer.dart';
 import 'package:site/presentation/desktop/widgets/desktop_portfolio.dart';
+import 'package:site/widgets/custom_app_bar.dart';
 import '../../widgets/flexible_space_component.dart';
 import '../../widgets/logo_button.dart';
 import 'widgets/desktop_container.dart';
@@ -57,24 +60,19 @@ class _DesktopBodyState extends State<DesktopBody> {
       scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch, PointerDeviceKind.stylus, PointerDeviceKind.unknown},),
 
       slivers: [
-        SliverAppBar(
-          titleSpacing: MediaQuery.of(context).size.width * 0.146,
-          pinned: true,
-          expandedHeight: MediaQuery.of(context).size.height * 0.45,
-          title: LogoButton(onPressed: () => _scrollToTop()),
-          actions: [
-            IconButton(onPressed: (){},splashRadius: 20, icon: const Image(image: AssetImage('assets/images/telegram.png'),color: Colors.white)),
-            addHorizontalSpace(10),
-            IconButton(onPressed: (){},splashRadius: 20,icon: const Image(image: AssetImage('assets/images/email.png'),color: Colors.white)),
-            addHorizontalSpace(MediaQuery.of(context).size.width * 0.146),
-          ],
+        CustomAppBar(
+          horizontalSpacing: 0.097,
+          expandedHeight: 0.45,
+          function: _scrollToTop,
           flexibleSpace: const FlexibleSpaceBar(
-              background: FlexibleComponent()),
+              background: FlexibleComponent(
+                child: DesktopFlexible(),
+              )),
         ),
         const SliverToBoxAdapter(
           child: DesktopContainer(
               direction: 'left',
-              lottie: 'assets/lotties/coding.json',
+              lottie: firstLottie,
               header: 'Efficient coding',
               text: firstText
           ),
@@ -82,7 +80,7 @@ class _DesktopBodyState extends State<DesktopBody> {
         const SliverToBoxAdapter(
           child: DesktopContainer(
               direction: 'right',
-              lottie: 'assets/lotties/planing.json',
+              lottie: secondLottie,
               header: 'Detailed planning',
               text: secondText,
           ),

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:site/core/utils/helper_widgets.dart';
@@ -19,7 +20,7 @@ class DesktopContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.15,vertical:MediaQuery.of(context).size.height * 0.05),
-      height: MediaQuery.of(context).size.height * 0.45,
+      height: MediaQuery.of(context).size.height * 0.35,
       color: color ?? Colors.white,
 
       child: direction == 'left' ?
@@ -35,9 +36,9 @@ class DesktopContainer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(header,style: Theme.of(context).textTheme.headline2,maxLines: 2),
+                AutoSizeText(header,style: Theme.of(context).textTheme.headline2,maxLines: 1),
                 addVerticalSpace(MediaQuery.of(context).size.height * 0.015),
-                Text(text,style: Theme.of(context).textTheme.bodyText1),
+                AutoSizeText(text,style: Theme.of(context).textTheme.bodyText1,maxLines: 4),
                 addVerticalSpace(MediaQuery.of(context).size.height * 0.03),
                 ArrowButton(),
               ],
@@ -58,9 +59,9 @@ class DesktopContainer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(header,style: Theme.of(context).textTheme.headline2,maxLines: 2),
+                AutoSizeText(header,style: Theme.of(context).textTheme.headline2,maxLines: 1),
                 addVerticalSpace(MediaQuery.of(context).size.height * 0.015),
-                Text(text,style: Theme.of(context).textTheme.bodyText1),
+                AutoSizeText(text,style: Theme.of(context).textTheme.bodyText1,maxLines: 4),
                 addVerticalSpace(MediaQuery.of(context).size.height * 0.03),
                 ArrowButton(),
               ],

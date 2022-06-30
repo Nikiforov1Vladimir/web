@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:site/core/utils/helper_widgets.dart';
 import 'package:site/core/values/colors.dart';
-import 'package:site/presentation/desktop/widgets/footer_column.dart';
+import 'package:site/core/values/texts.dart';
+import 'package:site/widgets/footer_column.dart';
 
 class DesktopFooter extends StatelessWidget {
 
@@ -19,25 +20,26 @@ class DesktopFooter extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+              children: const [
                 FooterColumn(
-                  header: 'MakeNGo',
-                  firstTextButton: 'Make it unique',
+                  centerText: false,
+                  header: firstColumnHeader,
+                  firstTextButton: firstColumnText
                 ),
                 FooterColumn(
-                  header: 'Компания',
-                  firstTextButton: 'О нас',
-                  firstTextButtonPressed: () => print('Дэме'),
+                  centerText: false,
+                  header: secondColumnHeader,
+                  firstTextButton: secondColumnText,
                 ),
                 FooterColumn(
+                  centerText: false,
                   header: 'Социальные сети',
                   firstTextButton: 'О нас',
-                  firstTextButtonPressed: () => print('Дэме'),
                 ),
                 FooterColumn(
+                  centerText: false,
                   header: 'Контакты',
                   firstTextButton: 'О нас',
-                  firstTextButtonPressed: () => print('Дэме'),
                 ),
               ],
             ),
