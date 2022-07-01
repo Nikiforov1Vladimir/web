@@ -54,12 +54,10 @@ class _DesktopBodyState extends State<DesktopBody> {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
       controller: _scrollController,
 
-      scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch, PointerDeviceKind.stylus, PointerDeviceKind.unknown},),
-
       slivers: [
+
         CustomAppBar(
           horizontalSpacing: 0.097,
           expandedHeight: 0.45,
@@ -67,8 +65,10 @@ class _DesktopBodyState extends State<DesktopBody> {
           flexibleSpace: const FlexibleSpaceBar(
               background: FlexibleComponent(
                 child: DesktopFlexible(),
-              )),
+              )
+          ),
         ),
+
         const SliverToBoxAdapter(
           child: DesktopContainer(
               direction: 'left',
@@ -77,6 +77,7 @@ class _DesktopBodyState extends State<DesktopBody> {
               text: firstText
           ),
         ),
+
         const SliverToBoxAdapter(
           child: DesktopContainer(
               direction: 'right',
@@ -85,12 +86,15 @@ class _DesktopBodyState extends State<DesktopBody> {
               text: secondText,
           ),
         ),
+
         SliverToBoxAdapter(
           child: DesktopPortfolio(),
         ),
+
         const SliverToBoxAdapter(
           child: DesktopFooter(),
         ),
+
       ],
     );
   }
