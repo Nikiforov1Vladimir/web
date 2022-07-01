@@ -2,7 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:site/core/utils/helper_widgets.dart';
-import 'package:site/widgets/arrow_button.dart';
 
 class DesktopContainer extends StatelessWidget {
 
@@ -38,9 +37,7 @@ class DesktopContainer extends StatelessWidget {
               children: [
                 AutoSizeText(header,style: Theme.of(context).textTheme.headline2,maxLines: 1),
                 addVerticalSpace(MediaQuery.of(context).size.height * 0.015),
-                AutoSizeText(text,style: Theme.of(context).textTheme.bodyText1,maxLines: 4),
-                addVerticalSpace(MediaQuery.of(context).size.height * 0.03),
-                ArrowButton(),
+                AutoSizeText(text,style: Theme.of(context).textTheme.bodyText1,maxLines: 3),
               ],
             ),
           )
@@ -62,8 +59,6 @@ class DesktopContainer extends StatelessWidget {
                 AutoSizeText(header,style: Theme.of(context).textTheme.headline2,maxLines: 1),
                 addVerticalSpace(MediaQuery.of(context).size.height * 0.015),
                 AutoSizeText(text,style: Theme.of(context).textTheme.bodyText1,maxLines: 4),
-                addVerticalSpace(MediaQuery.of(context).size.height * 0.03),
-                ArrowButton(),
               ],
             ),
           ),

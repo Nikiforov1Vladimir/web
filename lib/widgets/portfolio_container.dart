@@ -19,6 +19,7 @@ class PortfolioContainer extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.01,vertical: MediaQuery.of(context).size.height * 0.01),
           width: MediaQuery.of(context).size.width * 0.2,
+          height: MediaQuery.of(context).size.width * 0.2,
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),

@@ -19,7 +19,7 @@ class MobileFlexible extends StatelessWidget {
           ),
           Column(
             children: [
-              AutoSizeText(flexibleText,style: Theme.of(context).textTheme.headline1,textAlign: TextAlign.center,maxLines: 3),
+              AutoSizeText(flexibleText,style: Theme.of(context).textTheme.headline3,textAlign: TextAlign.center,maxLines: 3),
               addVerticalSpace(MediaQuery.of(context).size.height * 0.03),
               const ContactUsButton(),
               addVerticalSpace(MediaQuery.of(context).size.height * 0.05),

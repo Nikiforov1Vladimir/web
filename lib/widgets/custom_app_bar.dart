@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:site/widgets/icon_button.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../core/utils/helper_widgets.dart';
 import 'logo_button.dart';
 
@@ -25,9 +25,26 @@ class CustomAppBar extends StatelessWidget {
       title: LogoButton(onPressed: () => function()),
 
       actions: [
-        AppIconButton(onPressed: (){}, icon: 'assets/images/telegram.png'),
+        AppIconButton(
+            onPressed: (){},
+            icon: 'assets/images/telegram.png'
+        ),
         addHorizontalSpace(MediaQuery.of(context).size.width * 0.007),
-        AppIconButton(onPressed: (){}, icon: 'assets/images/email.png'),
+        AppIconButton(
+            onPressed: () async {
+              final toEmail = 'halolel14@gmail.com';
+              final subject = 'Ваша тема';
+              final message = 'Ваше сообщение';
+
+              final url = 'mailto:$toEmail?subject=$subject&body=$message';
+
+              if(await canLaunch(url)){
+                await url;
+              }
+
+            },
+            icon: 'assets/images/email.png'
+        ),
         addHorizontalSpace(MediaQuery.of(context).size.width * horizontalSpacing),
       ],
 
