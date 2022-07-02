@@ -4,6 +4,8 @@ import 'package:site/core/values/colors.dart';
 class Themes{
   static final lightTheme = ThemeData(
 
+    fontFamily: 'JetBrainsMono',
+
     scaffoldBackgroundColor: appWhite,
 
     appBarTheme: const AppBarTheme(
